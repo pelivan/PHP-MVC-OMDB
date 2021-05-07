@@ -1,13 +1,11 @@
 <?php
 
-class DeletePage
+class ReadPage
 {
     public function __construct()
     {
         $name = $_GET['n'];
         $pass = $_GET['pw'];
-        $delete = $_GET['d'];
-        $imefilma = $_GET['ime'];
         $query="SELECT * from user where name='$name' and pass='$pass'";
         $result=AppCore::getDB()->sendQuery($query);
         if(mysqli_num_rows($result) == 1)
@@ -22,15 +20,12 @@ class DeletePage
         }
 
  
-        // $check = "DELETE FROM film WHERE naziv='".$imefilma.'";
-        $check = "DELETE FROM film WHERE naziv = '$imefilma' ";
-        var_dump($imefilma);
+        $check = "SELECT * FROM film";
         $rez=AppCore::getDB()->sendQuery($check);
-        echo 'Movie deleted';
+        while($row = $rez->fetch_assoc()){
+            echo "<table><tr><td>".$row['naziv']."</td><td>".$row['god']."</td><td>".$row['zanr']."</td><td>".$row['ocjena']."</td></tr></table>";
+        }
         
         
     }
-
-
-
 }
