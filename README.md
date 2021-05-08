@@ -10,3 +10,6 @@ Fetch: http://localhost/OMDB/index.php?page=Fetch&n=ivan&pw=123&ime=Godfather
 Fetch+Save+Rate: http://localhost/OMDB/index.php?page=Fetch&n=ivan&pw=123&ime=spongebob&s=y&ocj=5
 
 
+Read: http://localhost/OMDB/index.php?page=Read&n=ivan&pw=123
+
+
