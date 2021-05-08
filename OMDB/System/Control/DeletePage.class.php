@@ -4,6 +4,11 @@ class DeletePage
 {
     public function __construct()
     {
+        $this->code();
+    }
+
+    public function code()
+    {
         $name = $_GET['n'];
         $pass = $_GET['pw'];
         $delete = $_GET['d'];
@@ -19,16 +24,13 @@ class DeletePage
         {
             echo "You are not authorized!";
             echo "<br>";
+            exit();
         }
-
- 
         // $check = "DELETE FROM film WHERE naziv='".$imefilma.'";
         $check = "DELETE FROM film WHERE naziv = '$imefilma' ";
         var_dump($imefilma);
         $rez=AppCore::getDB()->sendQuery($check);
         echo 'Movie deleted';
-        
-        
     }
 
 

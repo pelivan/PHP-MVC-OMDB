@@ -8,6 +8,11 @@ class ReadPage
         $pass = $_GET['pw'];
         $query="SELECT * from user where name='$name' and pass='$pass'";
         $result=AppCore::getDB()->sendQuery($query);
+        while($row = $result->fetch_assoc())
+        {
+            echo $row['id'];
+        }
+
         if(mysqli_num_rows($result) == 1)
         {
             echo "You are authorized!";
