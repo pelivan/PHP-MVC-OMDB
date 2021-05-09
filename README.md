@@ -13,3 +13,6 @@ Fetch+Save+Rate: http://localhost/OMDB/index.php?page=Fetch&n=ivan&pw=123&ime=sp
 Read: http://localhost/OMDB/index.php?page=Read&n=ivan&pw=123
 
 
+Update: http://localhost/OMDB/index.php?page=Update&n=ivan&pw=123&ime=Texas&ocj=2
+
+
