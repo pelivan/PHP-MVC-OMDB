@@ -6,13 +6,11 @@ class RequestHandler {
     public function __construct($className)
     {
         $className = $className.'Page';
-        $classPath = 'C:/xampp/htdocs/OMDB/System/Control/' . $className . '.class.php'; // Ovo smo dodali...
-        //var_dump($classPath);
-        // $classPath = __DIR__ . 'inc/system/pages' . $className . '.class.php';
+        $classPath = 'C:/xampp/htdocs/ProjektPHP/System/Pages/' . $className . '.class.php';
+
 
         if (!preg_match('/^[a-z0-9_]+$/i', $className) || !file_exists($classPath)) {
-            //throw new RuntimeException();
-            //throw new Exception();
+
         }
 
         //include class

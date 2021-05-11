@@ -3,8 +3,7 @@
 require ('./System/core.functions.php');
 require ('./System/Util/RequestHandler.class.php');
 
-require ('./System/Exception/SystemException.class.php');   
-
+require ('./System/Exception/SystemException.class.php');
 
 class AppCore 
 {
@@ -19,13 +18,7 @@ class AppCore
 
     public function handleException($e)
     {
-            //var_dump($e); exit();
-            try {
-                //$e->show();
-            }
-            catch (Exception $e2) {
-                print ("Ne mogu uvatit iznimku." );
-            }
+        // $e->show();
     }
 
     public function initDB()
@@ -34,7 +27,7 @@ class AppCore
         require ('./System/Model/MySQLiDatabase.class.php');
 
         // Na ovo se vrati
-         self::$dbObj = new MySQLiDatabase($host, $user, $password, $database); 
+         self::$dbObj = new MySQLiDatabase(DB_HOST, DB_USER, DB_PASS, DB_NAME); 
 
     }
     
@@ -43,17 +36,14 @@ class AppCore
         return self::$dbObj;
     }
 
-    // Vrati se na ovo
-    /*
-    9. Unutar konstruktora iz zadatka 6. pozvati metodu initOptions() koja 
-    učitava datoteku system/options.inc.php
-    */
+    
     public function initOptions() {
         require ('./System/options.inc.php');
     }
-
+    
     //Definirati autoload funkciju koja učitava sve klase iz util mape.
-    public function autoload($className) {
+    public static function autoload($className) {
+
     }
 }
 
